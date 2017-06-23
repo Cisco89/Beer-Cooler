@@ -88,14 +88,27 @@
         }
     });
 
+    var Contact = React.createClass({
+      render: function() {
+          return (
+            <div>
+              <h2>Like what you see? Maybe, got questions.</h2>
+              <p>Please contact me with any ideas or questions you have at
+              franciscoadriangarcia1@gmail.com.
+              </p>
+            </div>
+          );
+        }
+    });
+
     var App = React.createClass({
       render: function() {
         return (
           <div >
             <h1>Beer Cooler</h1>
             <ul className="header">
-              <li>The Cooler</li>
-              <li>Contact</li>
+              <li><Link to="/">The Cooler</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
             <div className="content">
               {this.props.children}
@@ -109,6 +122,7 @@
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={BeerCooler}/>
+        <Route path="contact" component={Contact} />
       </Route>
     </Router>,
     destination
