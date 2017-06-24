@@ -51,6 +51,10 @@
     .content li {
       margin-bottom: 10px;
     }
+    .active {
+      background-color: #006ec3;
+      color: #FEFEFE;
+    }
 
   </style>
 </head>
@@ -107,8 +111,8 @@
           <div >
             <h1>Beer Cooler</h1>
             <ul className="header">
-              <li><Link to="/">The Cooler</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><IndexLink to="/" activeClassName="active">The Cooler</IndexLink></li>
+              <li><Link to="/contact" activeClassName="active">Contact</Link></li>
             </ul>
             <div className="content">
               {this.props.children}
